@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="560.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.compi.csc311group3.view.controllers.DashboardViewController">
+   <children>
+      <VBox fx:id="leftSection" layoutX="-2.0" prefHeight="560.0" prefWidth="210.0">
+         <children>
+            <Pane prefHeight="229.0" prefWidth="210.0">
+               <VBox.margin>
+                  <Insets top="150.0" />
+               </VBox.margin>
+               <children>
+                  <VBox layoutX="51.0" layoutY="49.0" prefHeight="200.0" prefWidth="157.0" spacing="2.0">
+                     <children>
+                        <Button fx:id="dashboardLink" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#dashboardLinkClicked" prefHeight="30.0" prefWidth="147.0" style="-fx-background-color: transparent;" styleClass="navBtn" text="Dashboard" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="analyticsLink" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#analyticsLinkClicked" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: transparent;" styleClass="navBtn" text="Analytics" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addExpenseLink" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="40.0" mnemonicParsing="false" onAction="#addExpenseLinkClicked" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: transparent;" styleClass="navBtn" text="Add Expense" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addDepositLink" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#addDepositLinkClicked" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: transparent;" styleClass="navBtn" text="Add Deposit" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="settingsLink" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#settingsLinkClicked" prefHeight="30.0" prefWidth="141.0" style="-fx-background-color: transparent;" styleClass="navBtn" text="Settings" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Text fill="WHITE" layoutX="21.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage" wrappingWidth="49.737998962402344" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="31.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@dashboardIcons/dashboard.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="31.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@dashboardIcons/analytics.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="31.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@dashboardIcons/addExpense.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="31.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@dashboardIcons/addDeposit.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="31.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@dashboardIcons/settings.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children></VBox>
+      <HBox prefHeight="34.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="33.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="8.0" top="26.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@dashboardIcons/leaf.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="logoText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Finance App">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="30.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <Pane fx:id="midSection" layoutX="187.0" prefHeight="560.0" prefWidth="662.0">
+         <children>
+            <Pane fx:id="balancePane" layoutX="68.0" layoutY="62.0" prefHeight="110.0" prefWidth="177.0">
+               <children>
+                  <Text fx:id="totalBalanceText" layoutX="16.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$3,000">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="17.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Balance" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="15.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@dashboardIcons/bank.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="expensePane" layoutX="259.0" layoutY="62.0" prefHeight="110.0" prefWidth="177.0">
+               <children>
+                  <Text fx:id="expensesText" layoutX="15.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$100">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="16.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expenses" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@dashboardIcons/dollarSign.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="budgetPane" layoutX="68.0" layoutY="185.0" prefHeight="110.0" prefWidth="177.0">
+               <children>
+                  <Text fx:id="monthlyBudgetText" layoutX="16.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$2,000">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="17.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Budget" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="15.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@dashboardIcons/moneyBag.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="savingsPane" layoutX="259.0" layoutY="185.0" prefHeight="110.0" prefWidth="177.0">
+               <children>
+                  <Text fx:id="savingsText" layoutX="15.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$1,000">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="16.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Savings" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@dashboardIcons/savings.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Text layoutX="68.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <BarChart fx:id="barChart" horizontalGridLinesVisible="false" layoutX="67.0" layoutY="304.0" prefHeight="230.0" prefWidth="368.0" title="Expenses" verticalGridLinesVisible="false">
+              <xAxis>
+                <CategoryAxis label="Category" prefWidth="472.0" tickLabelGap="0.0" tickLength="2.0" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" label="Dollars" minorTickCount="0" minorTickVisible="false" prefHeight="133.0" prefWidth="38.0" tickLength="1.0" />
+              </yAxis>
+            </BarChart>
+            <ImageView fitHeight="24.0" fitWidth="48.0" layoutX="387.0" layoutY="312.0" onMouseClicked="#startExport" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@dashboardIcons/download.png" />
+               </image>
+            </ImageView>
+            <Pane fx:id="recentExpensesPane" layoutX="451.0" layoutY="61.0" prefHeight="473.0" prefWidth="141.0">
+               <children>
+                  <VBox fx:id="recentExpensesContainer" layoutX="17.0" layoutY="30.0" prefHeight="414.0" prefWidth="109.0" />
+                  <Text layoutX="52.0" layoutY="-97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recent Expenses" />
+                  <Text layoutX="16.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recent Expenses">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Line fx:id="recentExpensesLine" endX="9.04296875" endY="0.808990478515625" layoutX="116.0" layoutY="28.0" startX="-100.0" />
+               </children>
+            </Pane>
+         </children></Pane>
+   </children>
+</AnchorPane>

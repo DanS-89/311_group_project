@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="402.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.compi.csc311group3.view.controllers.AnalyticsController">
+   <children>
+      <BorderPane layoutX="-1.0" prefHeight="402.0" prefWidth="757.0">
+         <top>
+            <MenuBar prefHeight="25.0" prefWidth="692.0" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <left>
+            <VBox prefHeight="377.0" prefWidth="164.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Analytics">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Comparison Information">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ComboBox fx:id="expenseComboBox" prefWidth="150.0" promptText="Select Expense">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <DatePicker fx:id="period1Start" promptText="Period 1 Start Date">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </DatePicker>
+                  <DatePicker fx:id="period1End" promptText="Period 1 End Date">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </DatePicker>
+                  <DatePicker fx:id="period2Start" promptText="Period 2 Start Date">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </DatePicker>
+                  <DatePicker fx:id="period2End" promptText="Period 2 End Date">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </DatePicker>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox fx:id="reportDisplayPane" prefHeight="308.0" prefWidth="267.0" BorderPane.alignment="CENTER" />
+         </center>
+         <right>
+            <VBox prefHeight="377.0" prefWidth="165.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="TOP_CENTER" prefHeight="27.0" prefWidth="128.0" text="Actions" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="totalExpenseButton" mnemonicParsing="false" onAction="#calculateTotalExpense" prefHeight="22.0" prefWidth="148.0" text="Calculate Expense Total">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="compareExpenseButton" mnemonicParsing="false" onAction="#compareExpense" prefHeight="22.0" prefWidth="147.0" text="Compare Expense Periods">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="numberOfEntriesButton" mnemonicParsing="false" onAction="#calculateNumberOfEntries" prefHeight="22.0" prefWidth="151.0" text="Number of Expense Entries">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="9.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="categoryAnalysisButton" mnemonicParsing="false" onAction="#calculateCategoryAnalysis" prefHeight="22.0" prefWidth="156.0" text="Expense by Category Analysis">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="clearButton" mnemonicParsing="false" onAction="#handleClear" prefHeight="22.0" prefWidth="144.0" text="Clear Fields">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+               </children></VBox>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
